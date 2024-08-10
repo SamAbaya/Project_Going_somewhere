@@ -18,9 +18,9 @@ During the data cleaning phase, the following tasks were performed
   3. Formatting the file for subsequent uoloading into DataGrip SQL management system
 ## DATA EXPLORATION
 The exploration of the data was geared towards answering questions such as 
-1. What countries have reduced their tourism expenditures post Covid lockdown?
-2. Did Tourism/ visitors rise or fall in 2021 and by what margin?
-3. Which countries are seeing a rise in tourism numbers and which areas are experiemncing a decline in the numbers.
+1. How is the expenditure situation for countires between 2020 and 2021?
+2. Did Tourism/ visitors rise or fall between 2020 and 2021
+3. Take a closer look data from America and France. 
 ## DATA ANALYSIS
 ```SQL
 
@@ -28,40 +28,23 @@ The exploration of the data was geared towards answering questions such as
 SELECT *
 FROM main.Tourism_in_countries
 
---Tourism expenditure (millions of US dollars) in 2021 by country (Which countries are spending more in tourism in 2021)
+
+--Tourism expenditure (millions of US dollars) in 2020 and 2021 by country (Which countries are spending more in tourism in 2021)
 SELECT Tourism_in_countries.Location, Tourism_in_countries.Year, Tourism_in_countries.Value
 FROM Tourism_in_countries
-WHERE Year = 2021
-group by Location
-order by Value;
+WHERE Year >= 2020
+  and "Series " = "Tourism expenditure (millions of US dollars)"
+order by Location
 
---Tourism expenditure (millions of US dollars) in 2020 by country (Which countries are spending more in tourism in 2021)
-SELECT Tourism_in_countries.Location, Tourism_in_countries.Year, Tourism_in_countries.Value
-FROM Tourism_in_countries
-WHERE Year = 2020
-group by Location
-order by Value;
 
---Tourism/visitor arrivals (thousands) in 2021 by country
+
+--Tourism/visitor arrivals (thousands) in 2020 and 2021 by country
 SELECT Tourism_in_countries.Location, Tourism_in_countries.Year, Tourism_in_countries.Value, Tourism_in_countries."Series "
 FROM Tourism_in_countries
-WHERE "Series " = 'Tourist/visitor arrivals (thousands)'and Year = 2021
-group by Year, Location
-order by Value;
-
---Tourism/visitor arrivals (thousands) in 2020 by country
-SELECT Tourism_in_countries.Location, Tourism_in_countries.Year, Tourism_in_countries.Value, Tourism_in_countries."Series "
-FROM Tourism_in_countries
-WHERE "Series " = 'Tourist/visitor arrivals (thousands)'and Year = 2020
-group by Year, Location
-order by Value;
-
---Tourism/visitor arrivals (thousands) in 2021 and 2020 by country
-SELECT Tourism_in_countries.Location, Tourism_in_countries.Year, Tourism_in_countries.Value, Tourism_in_countries."Series "
-FROM Tourism_in_countries
-WHERE "Series " = 'Tourist/visitor arrivals (thousands)'and Year >=2019
+WHERE "Series " = 'Tourist/visitor arrivals (thousands)'and Year >= 2020
 group by Year, Location
 order by Location;
+
 
 --Data from france only
 with Tic as (select location, year, "Series ", Value
@@ -79,11 +62,13 @@ from Tourism_in_countries
 where Location = 'France'
 order by Value
 
-select Tourism_in_countries.Year, Tourism_in_countries.Value
+
+--only USA data
+select Tourism_in_countries.Location, Tourism_in_countries.Value, Year, "Series "
 from Tourism_in_countries
-where Year = '1995'
-group by Year, Value
-```
+where Location = 'United States of America'
+order by Value
+
 [DASHBOARD](dashboard)
 
 

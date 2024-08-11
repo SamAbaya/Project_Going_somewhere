@@ -1,10 +1,10 @@
-# PROJECT_GOING_SOMWEHERE
+# PROJECT_GOING_SOMEWHERE
 ## PROJECT OVERVIEW
 <span style="color: #222222;">The latest update from Word Tourism Organization (UNWTO) in December 2020 stated: “the decline in the first ten months of 2020 represents 900 million fewer international tourist arrivals compared to the same period in 2019, and translates into a loss of US</span> <span style="color: #222222;">$</span><span style="color: #222222;">935 billion in export revenues from international tourism, more than 10 times the loss in 2009 under the impact of the global economic crisis”</span>
-In 2021, the Research department of the World Tourism Organisation requested a synthesis report of the globalk touriosm trends in 2021
+In 2021, the Research department of the World Tourism Organisation requested a synthesis report of the global tourism trends in 2021
 
 ## OBJECTIVE OF THIS STUDY 
-The main objective of the report was to undertsand the tourism data by country analysis and to extablish which countriues are seeing the greatest fall in tourism numbers. 
+The main objective of the report was to undertsand the tourism data by country analysis and study the trend of expenditure and visits between 2020 and 2021. 
 ## DATA SOURCE
 UNWTO Tourism dataset (Attached to files)
 ## TOOLS
@@ -18,9 +18,9 @@ During the data cleaning phase, the following tasks were performed
   3. Formatting the file for subsequent uoloading into DataGrip SQL management system
 ## DATA EXPLORATION
 The exploration of the data was geared towards answering questions such as 
-1. How is the expenditure situation for countires between 2020 and 2021?
+1. How is the expenditure situation for countries between 2020 and 2021?
 2. Did Tourism/ visitors rise or fall between 2020 and 2021
-3. Take a closer look data from America and France. 
+3. Take a closer look at data from America and France. 
 ## DATA ANALYSIS
 ```SQL
 

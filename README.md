@@ -68,10 +68,16 @@ select Tourism_in_countries.Location, Tourism_in_countries.Value, Year, "Series 
 from Tourism_in_countries
 where Location = 'United States of America'
 order by Value
+```
 
-[DASHBOARD](dashboard)
+## Findings
+From careful analysis of the charts, it was understood that 
+1. Between 2020 and 2021, many countries (89%) increased their expenditure on Tourrism, as 2021, was the year that saw a more relaxed post Covid regulations in several couyntries. Although the United States of America was the only country in the top 10 to reduce their expenditure on tourism.
+2. The sitaution of USA could be as a result of the sharp fall in tourists/visitors between 2019 and 2020, and a little steady rise in the numbers for 2021. On the other hand, France, did experience a sharp fall in tourists/visitirs between 2019 and 2020 and a steady rise in the numbers in 2021, but did increase their expenditure on tourism by about 15%.
+3. In general, global tourism steadly rose between 2020 and 2021, although that did not correspond to the growth in expenditure in tourism. 
 
-
+## SUMMARY
+To summerise, many countries in the world increased their expenditure for tourism between 2020 and 2021, although in most of these countries, the number of visitors or tourists has fallen drastically due to the aftermath of the pandemic and its subsequent lockdown protocols. 
 
 
 
